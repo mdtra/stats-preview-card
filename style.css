@@ -9,7 +9,7 @@ body {
 
 .card {
     margin: auto;
-    margin-top: 14%;
+    margin-top: 13%;
     margin-bottom: 100px;
 
     display: flex;
@@ -19,21 +19,35 @@ body {
     border-radius: 8px;
 }
 
-.card-inner-right {
+.card-inner-rigth {
     flex: 1;
+    position: relative;
 }
 
 .image {
     width: 100%;
+    
     margin-bottom: -4px;
     border-radius: 0px 8px 8px 0px;
+}
 
-    filter: opacity(0.4) drop-shadow(0 0 0 hsl(277, 64%, 61%));
+.overlay-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    filter: opacity(0.6) saturate(4) brightness(0.4);
+    background-color: hsl(277, 42%, 34%);
+    border-radius: 0px 8px 8px 0px;
+
 }
 
 .card-inner-left {
     flex: 1;
-    padding: 70px;
+}
+
+.card-info {
+    margin: 70px;
 }
 
 .card-info-description {
@@ -89,4 +103,95 @@ body {
 
 .attribution a {
      color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 1100px) {
+    .card {
+        max-width: 500px;
+        flex-flow: column-reverse wrap;
+    }
+
+    .image {
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .overlay-img {
+        border-radius: 8px 8px 0px 0px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .card {
+        margin-top: 80px;
+        max-width: 320px;
+        flex-flow: column-reverse wrap;
+    }
+
+    .card-info {
+        margin: 30px;
+        text-align: center;
+    }
+
+    .card-info-description {
+        margin-bottom: 0px;
+    }
+
+    .card-info-description > h1 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    .card-info-description > p {
+        margin-top: 20px;
+    }
+
+    .card-info-count {
+        margin-top: 0;
+        display: flex;
+        flex-flow: column wrap;   
+    }
+
+    .card-count-item {
+        flex: 1;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .card {
+        margin-top: 80px;
+        max-width: 320px;
+        flex-flow: column-reverse wrap;
+    }
+
+    .card-info {
+        margin: 30px;
+        text-align: center;
+    }
+
+    .card-info-description {
+        margin-bottom: 0px;
+    }
+
+    .card-info-description > h1 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    .card-info-description > p {
+        margin-top: 20px;
+    }
+
+    .card-info-count {
+        margin-top: 0;
+        display: flex;
+        flex-flow: column wrap;   
+    }
+
+    .card-count-item {
+        flex: 1;
+        margin-top: 30px;
+    }
+
 }
